@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Car Shopping</title>
+    <title>Enter Your Name</title>
+</head>
+<body>
+    <form action="/save_name" method="post">
+        <label for="username">Enter your name:</label>
+        <input type="text" id="username" name="username" required>
+        
+    </form>
+    <div class="container">
+        <h1>Car Shopping</h1>
+        <form action="/calculate" method="post">
+            <label for="car">Choose a Car:</label>
+            <select id="car" name="car">
+                <option value="car1">Car 1</option>
+                <option value="car2">Car 2</option>
+                <option value="car3">Car 3</option>
+                <option value="car4">Car 4</option>
+                <option value="car5">Car 5</option>
+            </select>
+
+            <label for="paymentTerm">Choose Payment Term:</label>
+            <select id="paymentTerm" name="paymentTerm">
+                <option value="8">8 years</option>
+                <option value="10">10 years</option>
+            </select>
+
+            <button type="submit">Calculate Payment</button>
+            <a href="{{ url_for('history') }}">View Payment History</a>
+    </div>
+</body>
+</html>

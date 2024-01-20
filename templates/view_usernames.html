@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usernames</title>
+</head>
+<body>
+    <h1>Usernames in the Database</h1>
+    <ul>
+        {% for username in usernames %}
+            <li>{{ username }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

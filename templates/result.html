@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Car Shopping - Result</title>
+</head>
+<body>
+    <h1>Hello, {{ username }}!</h1>
+    <p>Your name has been saved in the database.</p>
+    <div class="container">
+    {% if car_name %}
+        <h2>Car Details</h2>
+        <p>Car: {{ car_name }}</p>
+        <p>Total Price: RM{{ car_price }}</p>
+        <p>Installment Payment ({{ payment_term }} years): RM{{ total_payment|round(2) }}</p>
+        <p>Monthly Payment: RM{{ monthly_payment|round(2) }}</p>
+        <img src="{{ url_for('static', filename='car_images/' + car_image) }}" alt="{{ car_name }}">
+        {% else %}
+        <p>Car not found!</p>
+    {% endif %}    
+    <a href="{{ url_for('history') }}">View Payment History</a>
+    </div>
+</body>
+</html>

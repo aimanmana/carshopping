@@ -1,0 +1,37 @@
+<!-- view_data.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Data</title>
+</head>
+<body>
+    <h1>View Data</h1>
+    <table border="1">
+        <tr>
+            <th>Timestamp</th>
+            <th>Name</th>
+            <th>Car Name</th>
+            <th>Car Price</th>
+            <th>Payment Term</th>
+            <th>Total Payment</th>
+            <th>Monthly Payment</th>
+            <th>Car Image</th>
+        </tr>
+        {% for entry in data %}
+        <tr>
+            <td>{{ entry.timestamp }}</td>
+            <td>{{ entry.save_name }}</td>
+            <td>{{ entry.car_name }}</td>
+            <td>{{ entry.car_price }}</td>
+            <td>{{ entry.payment_term }}</td>
+            <td>{{ entry.total_payment }}</td>
+            <td>{{ entry.monthly_payment }}</td>
+            <td>{{ entry.car_image }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

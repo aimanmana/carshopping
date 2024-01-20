@@ -1,0 +1,40 @@
+<!-- history.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment History</title>
+</head>
+<body>
+    <h1>Payment History</h1>
+    
+    {% if data %}
+        <table border="1">
+            <tr>
+                <th>Timestamp</th>
+                <th>Car Name</th>
+                <th>Car Price</th>
+                <th>Payment Term</th>
+                <th>Total Payment</th>
+                <th>Monthly Payment</th>
+                <th>Car Image</th>
+            </tr>
+            {% for record in data %}
+                <tr>
+                    <td>{{ record.timestamp }}</td>
+                    <td>{{ record.car_name }}</td>
+                    <td>{{ record.car_price }}</td>
+                    <td>{{ record.payment_term }}</td>
+                    <td>{{ record.total_payment }}</td>
+                    <td>{{ record.monthly_payment }}</td>
+                    <td><img src="{{ url_for('static', filename='images/' + record.car_image) }}" alt="{{ record.car_name }}" width="100"></td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No payment history available.</p>
+    {% endif %}
+</body>
+</html>
